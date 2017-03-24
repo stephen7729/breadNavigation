@@ -1,0 +1,54 @@
+.breadMain {
+    height: 28px;
+    width: 100%;
+    border: 1px solid #4a4a4a;
+    position: relative;
+}
+
+.bread-pill > li > a{
+    padding: 4px 15px;
+}
+.nav-bread .bread-pill > li:not(:last-child) > a::after {
+    content: "";
+    border-radius: 0 5px 0 50px;
+    border-right: 1px solid #4a4a4a;
+    border-top: 1px solid #4a4a4a;
+    box-sizing: content-box;
+    height: 13px;
+    position: absolute;
+    right: -5px;
+    top: 6px;
+    transform: scale(0.707) rotate(45deg);
+    width: 13px;
+    z-index: 1;
+}
+
+.nav-bread .bread-pill > li:last-child > a::after {
+    content: "";
+    border-radius: 0 5px 0 50px;
+    border-right: 1px solid #4a4a4a;
+    border-top: 1px solid #4a4a4a;
+    box-sizing: content-box;
+    height: 27px;
+    position: absolute;
+    right: -5px;
+    top: -1px;
+    transform: scale(0.707) rotate(45deg);
+    width: 27px;
+    z-index: 1;
+}
+
+.nav-bread .bread-pill > li:last-child > a::before {
+    content: "";
+    border-radius: 0 5px 0 50px;
+    border-right: 1px solid #4a4a4a;
+    border-top: 1px solid #4a4a4a;
+    box-sizing: content-box;
+    height: 27px;
+    position: absolute;
+    right: 50px;
+    top: -1px;
+    transform: scale(0.707) rotate(45deg);
+    width: 27px;
+    z-index: 1;
+}
