@@ -1,54 +1,82 @@
+body {
+    overflow-x: hidden;
+}
+.nav-pills > li + li {
+    margin-left: 0;
+}
+a,
+a:active,
+a:focus {
+    color: #000000;
+    outline: none;
+}
+a:hover {
+    color: #000000;
+}
 .breadMain {
     height: 28px;
     width: 100%;
-    border: 1px solid #4a4a4a;
+    border: 1px solid #dddddd;
     position: relative;
 }
 
 .bread-pill > li > a{
-    padding: 4px 15px;
+    padding: 4px 8px 4px 25px;
 }
-.nav-bread .bread-pill > li:not(:last-child) > a::after {
+.nav-bread .bread-pill > li:not(:nth-last-child(2)) > a::after {
     content: "";
     border-radius: 0 5px 0 50px;
-    border-right: 1px solid #4a4a4a;
-    border-top: 1px solid #4a4a4a;
+    border-right: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
     box-sizing: content-box;
     height: 13px;
     position: absolute;
-    right: -5px;
+    right: -14px;
     top: 6px;
     transform: scale(0.707) rotate(45deg);
     width: 13px;
     z-index: 1;
 }
 
-.nav-bread .bread-pill > li:last-child > a::after {
+.nav-bread .bread-pill > li:nth-last-child(1) > a::after{
     content: "";
+    background-color: #E0E4ED;
     border-radius: 0 5px 0 50px;
-    border-right: 1px solid #4a4a4a;
-    border-top: 1px solid #4a4a4a;
+    border-right: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
     box-sizing: content-box;
-    height: 27px;
+    height: 26px;
     position: absolute;
-    right: -5px;
-    top: -1px;
+    right: -14px;
+    top: 0px;
     transform: scale(0.707) rotate(45deg);
     width: 27px;
     z-index: 1;
 }
 
-.nav-bread .bread-pill > li:last-child > a::before {
+.nav-bread .bread-pill > li:nth-last-child(2) > a::after {
     content: "";
+    background-color: #ffffff;
     border-radius: 0 5px 0 50px;
-    border-right: 1px solid #4a4a4a;
-    border-top: 1px solid #4a4a4a;
+    border-right: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
     box-sizing: content-box;
-    height: 27px;
+    height: 25px;
     position: absolute;
-    right: 50px;
-    top: -1px;
+    right: -14px;
+    top: 0px;
     transform: scale(0.707) rotate(45deg);
     width: 27px;
     z-index: 1;
+}
+
+.nav-bread .bread-pill > li:nth-last-child(1) > a {
+    background-color: #E0E4ED;
+}
+
+.nav-pills > li > a {
+    border-radius: 0;
+}
+.nav-pills > li > a:hover {
+    background: none;
 }

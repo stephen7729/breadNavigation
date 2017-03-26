@@ -8,12 +8,51 @@
 </head>
 <body class="nav-bread">
     <div class="breadMain">
-        <ul class="nav nav-pills bread-pill">
+        <ul id="bread-main" class="nav nav-pills bread-pill">
             <li><a href="#">aaa</a></li>
             <li><a href="#">bbb</a></li>
             <li><a href="#">ccc</a></li>
             <li><a href="#">ddd</a></li>
+            <li><a href="#">eee</a></li>
+            <li><a href="#">fff</a></li>
         </ul>
     </div>
 </body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+        //为最后一个li添加标记
+        $("#bread-main").find("li:last").attr("position","last");
+        //添加点击事件
+        $("#bread-main").find("li").each(function () {
+            $(this).on("click",function () {
+                if ($(this).attr("position") === "last"){
+
+                }else {
+                    $(this).nextAll().remove();
+                }
+            })
+        });
+        $(window).resize(function() {
+            var sum_wid = 0,max_wid = 80,window_wid = $(window).width();
+            for (var i=0;i < $("#bread-main").find("li").length ; i++){
+                var cur_wid = $($("#bread-main").find("li")[i]).outerWidth()
+                sum_wid += cur_wid
+            }
+            if (window_wid - sum_wid > 20){
+                $("#bread-main").find("li").eq(0).show();
+            }else {
+                //变形
+                var index = Math.ceil((sum_wid - window_wid + 20)/55)-1;
+                console.log(index)
+                if (index >= 0){
+                    $("#bread-main").find("li").eq(index).nextAll().show()
+                    $("#bread-main").find("li").eq(index).hide();
+                    $("#bread-main").find("li").eq(index).prevAll().hide()
+                }
+            }
+        });
+
+    });
+</script>
 </html>
