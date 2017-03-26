@@ -33,6 +33,23 @@
                 }
             })
         });
+        var sum_wid = 0,max_wid = 80,window_wid = $(window).width();
+        for (var i=0;i < $("#bread-main").find("li").length ; i++){
+            var cur_wid = $($("#bread-main").find("li")[i]).outerWidth()
+            sum_wid += cur_wid
+        }
+        if (window_wid - sum_wid > 20){
+            $("#bread-main").find("li").eq(0).show();
+        }else {
+            //变形
+            var index = Math.ceil((sum_wid - window_wid + 20)/55)-1;
+            console.log(index)
+            if (index >= 0){
+                $("#bread-main").find("li").eq(index).nextAll().show()
+                $("#bread-main").find("li").eq(index).hide();
+                $("#bread-main").find("li").eq(index).prevAll().hide()
+            }
+        }
         $(window).resize(function() {
             var sum_wid = 0,max_wid = 80,window_wid = $(window).width();
             for (var i=0;i < $("#bread-main").find("li").length ; i++){
